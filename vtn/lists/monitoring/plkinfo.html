@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vtnApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Link Monitoring</title>
+    <script src='/vtn/js/angular.min.js'></script>
+    <script src='/vtn/js/angular-resource.min.js'></script>
+    <script src='/vtn/js/angular-route.min.js'></script>
+    <script src='/vtn/js/angular-cookies.min.js'></script>
+    <script src='/vtn/js/angular-sanitize.min.js'></script>
+    <script src='/vtn/js/angular-touch.min.js'></script>
+    <script src='/vtn/js/angular-animate.min.js'></script>
+    <script src='/vtn/js/angular-aria.min.js'></script>
+    <script src='/vtn/js/angular-material.min.js'></script>
+    <script src='/vtn/bower_components/bootstrap/dist/js/ui-bootstrap-tpls-1.3.2.min.js'></script>
+    <script src='/vtn/controller.js'></script>
+    <script src='/vtn/ctlCtrl.js'></script>
+    <script src='/vtn/factory.js'></script>
+    <script src='/vtn/service.js'></script>
+
+    <link type="text/css" rel="stylesheet" href="/vtn/css/angular-material.min.css"/>
+    <link type="text/css" rel="stylesheet" href='/vtn/css/vtn-style.css'/>
+
+</head>
+<body>
+<md-toolbar layout="row" >
+<h2>Link Monitoring</h2>
+</md-toolbar>
+<div ng-controller="ctlController">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        <br>
+        <form>
+            Select Controller Id:
+            <select ng-model="option.ctl" ng-click="getLinks(option.ctl)">
+                <option ng-repeat="ctl in ctls" value={{ctl.controller_id}}>{{ctl.controller_id}}</option>
+            </select><br><br>
+            Select Physical Link:
+            <select ng-model="option.plk">
+                <option ng-repeat="link in links" value={{link}}>{{link.plk_summary}}</option>
+            </select><br><br>
+            <nav>
+                <a href="#!/plktable">
+                    <input type="button" ng-click="getLinkInfo(option.ctl, option.plk)" value="Submit">
+                </a>
+            </nav>
+        </form><br>
+        </md-sidenav><br><br>
+        
+        <div ng-view>
+
+            <!-- Physical Link Information Table Injection -->
+
+        </div>
+</div>
+
+<div align="center">
+    <a href="/vtn/index.html">
+        <input type="button" class="md-button" onclick value="Home">
+    </a>
+</div>
+
+</body>
+</html>

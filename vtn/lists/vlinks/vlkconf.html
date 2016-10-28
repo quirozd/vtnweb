@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vtnApp">
+<head>
+    <meta charset="UTF-8">
+    <title>vLink Configuration</title>
+    <script src='/vtn/js/angular.min.js'></script>
+    <script src='/vtn/js/angular-resource.min.js'></script>
+    <script src='/vtn/js/angular-route.min.js'></script>
+    <script src='/vtn/js/angular-cookies.min.js'></script>
+    <script src='/vtn/js/angular-sanitize.min.js'></script>
+    <script src='/vtn/js/angular-touch.min.js'></script>
+    <script src='/vtn/js/angular-animate.min.js'></script>
+    <script src='/vtn/js/angular-aria.min.js'></script>
+    <script src='/vtn/js/angular-material.min.js'></script>
+    <script src='/vtn/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'></script>
+    <script src='/vtn/controller.js'></script>
+    <script src='/vtn/vtnCtrl.js'></script>
+    <script src='/vtn/vbrCtrl.js'></script>
+    <script src='/vtn/vlkCtrl.js'></script>
+    <script src='/vtn/ctlCtrl.js'></script>
+    <script src='/vtn/factory.js'></script>
+    <script src='/vtn/service.js'></script>
+
+    <!--link type="text/css" rel="stylesheet" href="/vtn/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/vtn/bower_components/bootstrap/dist/css/bootstrap-theme.css"/-->
+    <link type="text/css" rel="stylesheet" href="/vtn/css/angular-material.min.css"/>
+    <link type="text/css" rel="stylesheet" href='/vtn/css/vtn-style.css'/>
+    <!--link type="text/css" rel="stylesheet" href='/vtn/css/prettify-theme.css'/>
+    <link type="text/css" rel="stylesheet" href='/vtn/css/docs.css'/>
+    <link type="text/css" rel="stylesheet" href='/vtn/css/animations.css'/-->
+
+</head>
+<body>
+<md-toolbar>
+<h2>vLink Configuration</h2>
+</md-toolbar>
+<div ng-controller="vtnController">
+    <div ng-controller="vlkController">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        <br>
+        <form>
+            Select a VTN for a list of member vLinks:
+            <select ng-model="option.vtn">
+                <option ng-repeat="tenant in tenants" value={{tenant}}>{{tenant.vtn_name}}</option>
+            </select><br><br>
+            <nav>
+                <a href="#!/vlkset">
+                    <input type="button" ng-click="getvLinks(option.vtn)" value="Submit">
+                </a>
+            </nav>
+        </form><br>
+        </md-sidenav><br><br>
+
+        <div ng-view>
+
+            <!-- vLinks Table Injection -->
+
+        </div>
+    </div>
+
+</div>
+
+<div align="center">
+    <a href="/vtn/index.html">
+        <input type="button" class="md-button" onclick value="Home">
+    </a>
+</div>
+
+</body>
+</html>

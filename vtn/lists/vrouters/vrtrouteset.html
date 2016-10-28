@@ -1,0 +1,33 @@
+<div>
+    <table>
+        <thead>
+        <th colspan="4"> Delete IP routes of {{vrtObject.vrt_name}} </th>
+        </thead>
+        <thead>
+        <th> Route Id </th>
+        <th> IP Address </th>
+        <th> Prefix </th>
+        <th> Next Hop </th>
+        <th> Options </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="stcroute in stcroutes">
+            <td> {{stcroute.static_iproute_id}} </td>
+            <td> {{stcroute.ipaddr}} </td>
+            <td> {{stcroute.prefix}} </td>
+            <td> {{stcroute.nexthopaddr}} </td>
+            <td>
+                <input type="button" ng-click="delStcRT(option.vtn, option.vrt, stcroute)" value="Delete">
+            </td>
+        </tr>
+        </tbody>
+    </table><br>
+    <div align="center">
+    <input type="button" ng-click="subView='vrtrouteadd.html'" value="Add New">
+    </div><br><br>
+
+    <div align="center">
+        <ng-include src="subView"></ng-include>
+    </div><br><br>
+
+</div>

@@ -1,0 +1,33 @@
+<div>
+    <table>
+        <thead>
+        <th colspan="3"> Edit/Delete vRouters of {{vtnObject.vtn_name}} </th>
+        </thead>
+        <thead>
+        <th> Name </th>
+        <th> Controller Id </th>
+        <th> Description </th>
+        <th> Options </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="rtr in rtrs">
+            <td> {{rtr.vrt_name}} </td>
+            <td> {{rtr.controller_id}} </td>
+            <td> {{rtr.description}} </td>
+            <td>
+                <input type="button" ng-click="updvRt(option.vtn, rtr)" value="Edit">
+                <input type="button" ng-click="delvRt(option.vtn, rtr)" value="Delete">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div align="center">
+    <input type="button" ng-click="subView='vrtadd.html'" value="Add New">
+    </div><br><br>
+
+    <div align="center">
+        <ng-include src="subView"></ng-include>
+    </div><br><br>
+
+</div>

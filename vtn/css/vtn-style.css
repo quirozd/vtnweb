@@ -1,0 +1,86 @@
+html, body {
+  position:relative;
+  height:100%;
+}
+
+#wrapper {
+  min-height:100%;
+  position:relative;
+  padding-bottom:120px;
+}
+#first {
+    width: 500px;
+    float:left; /* add this */
+}
+#second {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+.title-style {
+  text-align: center;
+  font-family: "Open Sans";
+  color: blue;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0px auto 20px auto;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 5px;
+}
+
+thead:first-child th:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+table thead:nth-child(1n) {
+  background-color: rgb(63,81,181);
+  color: white;
+  font-weight: bold;
+}
+
+table thead:nth-child(2n) {
+  background-color: #A9BCF5;
+  color: black;
+  font-weight: bold;
+}
+
+table thead:nth-child(3n) {
+  background-color: #A9BCF5;
+  color: black;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: lightgray;
+  color: black;
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+  color: black;
+}
+
+thead th {
+  border: none;
+  border-top: solid 1px white;
+}
+
+tbody td {
+  border: none;
+  border-top: solid 1px white;
+}
+
+
+

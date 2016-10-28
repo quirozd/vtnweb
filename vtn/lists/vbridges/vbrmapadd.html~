@@ -1,0 +1,14 @@
+<div>
+    <form>
+        <h3>Set a new Port Map for {{intfObject.if_name}} Interface:</h3>
+        Logical Port ID: 
+        <select ng-model="ifmap.logPortId" ng-click="getLogPts(option.vbr)">
+                <option ng-repeat="logpt in logpts" value={{logpt.logical_port_id}}>{{logpt.logical_port_id}}</option>
+        </select> 
+        Vlan ID: <input type="text" ng-model="ifmap.vlanId"><br><br>
+        Vlan Tagging?: <input type="radio" ng-model="ifmap.tgd" value="true">
+        True<input type="radio" ng-model="ifmap.tgd" value="false">False<br><br>
+        <input type="button" ng-click="setvBrMap(option.vtn, option.vbr, option.int)" value="Submit">
+    </form>-->
+</div>
+

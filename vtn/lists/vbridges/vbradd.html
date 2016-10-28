@@ -1,0 +1,19 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new vBridge for {{vtnObject.vtn_name}}:</h3>
+        vBridge Name: <input type="text" ng-model="vbrg.vbrName" required> 
+        Description: <input type="text" ng-model="vbrg.vbrDesc" required><br><br>
+        <div ng-controller="ctlController">
+        Controller ID:
+        <select ng-init="getCtrl()" ng-model="vbrg.ctlId" ng-click="getDom(vbrg.ctlId)">
+            <option ng-repeat="ctl in ctls" value={{ctl.controller_id}}>{{ctl.controller_id}}</option>
+        </select> 
+        Domain ID:
+        <select ng-model="vbrg.domId">
+            <option ng-repeat="dom in doms" value={{dom.domain_id}}>{{dom.domain_id}}</option>
+        </select>
+        </div><br><br>
+        <input type="button" ng-click="addvBr(option.vtn)" value="Submit"><br>
+    </form>
+
+</div>

@@ -1,0 +1,50 @@
+
+
+<md-dialog aria-label="Edit Vlinks"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Edit Vlinks</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        Description: <input type="text" ng-model="vlk.vlkDesc" required><br><br>
+        Administration status: 
+        <input type="radio" ng-model="vlk.admStat" value="enable"> Enable
+        <input type="radio" ng-model="vlk.admStat" value="disable"> Disable
+        <br><br>
+        <h3>Boundary Map:</h3> 
+        <div ng-controller="vlkController">
+            Boundary Id:
+            <select ng-model="vlk.bdryId" ng-init="getBdry()">
+                <option ng-repeat="bdr in bdrs" value={{bdr.boundary_id}}>{{bdr.boundary_id}}</option>
+            </select><br><br>
+            Using Vlans?:
+            <input type="radio" ng-model="vlk.noVlan" value="true"> No
+            <input type="radio" ng-model="vlk.noVlan" value="false"> Yes
+            <br>
+            Vlan Id (In case of using vlans):
+            <input type="text" ng-model="vlk.vlanId" required>
+        </div><br>
+        
+        
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <input type="button" class="md-button" ng-click="submit()" value="Submit">
+      <span flex></span>
+      <md-button ng-click="answer('not useful')">
+       Not Useful
+      </md-button>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;">
+        Useful
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

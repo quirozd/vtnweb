@@ -1,0 +1,37 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new Physical Boundary</h3><br>
+        Boundary Id: <input type="text" ng-model="bdry.bdryId" required> 
+        Description: <input type="text" ng-model="bdry.bdryDesc" required><br><br>
+        <h3>Set the boundary link:</h3>
+        <div ng-controller="ctlController">
+            Controller-1 Id: 
+            <select ng-model="bdry.ctrlId1" ng-click="getDom(bdry.ctrlId1)">
+                <option ng-repeat="ctl in ctls" value={{ctl.controller_id}}>{{ctl.controller_id}}</option>
+            </select>
+            Domain-1 Id:
+            <select ng-model="bdry.domId1" ng-click="getLogPts(bdry.ctrlId1, bdry.domId1)">
+                <option ng-repeat="dom in doms" value={{dom.domain_id}}>{{dom.domain_id}}</option>
+            </select> 
+            Logical Port 1 Id:
+            <select ng-model="bdry.logPtId1">
+                <option ng-repeat="logpt in logpts" value={{logpt.logical_port_id}}>{{logpt.logical_port_id}}</option>
+            </select>
+        </div><br><br>
+        <div ng-controller="ctlController">
+            Controller-2 Id:
+            <select ng-model="bdry.ctrlId2" ng-click="getDom(bdry.ctrlId2)">
+                <option ng-repeat="ctl in ctls" value={{ctl.controller_id}}>{{ctl.controller_id}}</option>
+            </select>
+            Domain-2 Id:
+            <select ng-model="bdry.domId2" ng-click="getLogPts(bdry.ctrlId2, bdry.domId2)">
+                <option ng-repeat="dom in doms" value={{dom.domain_id}}>{{dom.domain_id}}</option>
+            </select> 
+            Logical Port 2 Id:
+            <select ng-model="bdry.logPtId2">
+                <option ng-repeat="logpt in logpts" value={{logpt.logical_port_id}}>{{logpt.logical_port_id}}</option>
+            </select><br><br>
+        </div>
+        <input type="button" ng-click="addBdry()" value="Submit">
+    </form>
+</div>

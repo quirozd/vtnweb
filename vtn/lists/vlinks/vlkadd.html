@@ -1,0 +1,44 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new Virtual Link</h3><br>
+        Link Name: <input type="text" ng-model="vlk.linkName" required> 
+        Description: <input type="text" ng-model="vlk.vlkDesc" required><br><br>
+        <div ng-controller="vbrController">
+            Virtual Node 1:
+            <select ng-model="vlk.vNode1" ng-init="getvBr(option.vtn)" ng-click="getvBrInt(option.vtn, vlk.vNode1)">
+                <option ng-repeat="brg in brgs" value={{brg}}>{{brg.vbr_name}}</option>
+            </select>
+            vNode1 Interface:
+            <select ng-model="vlk.vNInt1">
+                <option ng-repeat="intf in intfs" value={{intf.if_name}}>{{intf.if_name}}</option>
+            </select> 
+        </div><br>
+        <div ng-controller="vbrController">
+            Virtual Node 2: 
+            <select ng-model="vlk.vNode2" ng-init="getvBr(option.vtn)" ng-click="getvBrInt(option.vtn, vlk.vNode2)">
+                <option ng-repeat="brg in brgs" value={{brg}}>{{brg.vbr_name}}</option>
+            </select>
+            vNode2 Interface:
+            <select ng-model="vlk.vNInt2">
+                <option ng-repeat="intf in intfs" value={{intf.if_name}}>{{intf.if_name}}</option>
+            </select> 
+        </div><br>
+        Administration status: 
+        <input type="radio" ng-model="vlk.admStat" value="enable"> Enable
+        <input type="radio" ng-model="vlk.admStat" value="disable"> Disable
+        <br><br>
+        <h3>Boundary Map:</h3> 
+        <div ng-controller="vlkController">
+            Boundary Id:
+            <select ng-model="vlk.bdryId" ng-init="getBdry()">
+                <option ng-repeat="bdr in bdrs" value={{bdr.boundary_id}}>{{bdr.boundary_id}}</option>
+            </select><br><br>
+            Using Vlans?:
+            <input type="radio" ng-model="vlk.noVlan" value="true"> No
+            <br>
+            Vlan Id (In case of using vlans):
+            <input type="text" ng-model="vlk.vlanId" required>
+        </div><br>
+        <input type="button" ng-click="addvLink(option.vtn)" value="Submit">
+    </form>
+</div>

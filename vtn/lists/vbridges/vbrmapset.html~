@@ -1,0 +1,25 @@
+<div>
+    <table border="1px">
+        <thead class="variables-matrix">
+        <th colspan="2"> Delete Port Maps of {{intfObject.if_name}} Interface </th>
+        </thead>
+        <thead>
+        <th> Logical Port ID </th>
+        </thead>
+        <tbody class="variables-matrix">
+        <tr ng-repeat="pmap in pmaps">
+            <td> {{pmap.logical_port_id}} </td>
+            <td>
+                <input type="button" ng-click="delvBrMap(option.vtn, option.vbr, option.int)" value="Delete">
+            </td>
+        </tr>
+        </tbody>
+    </table><br>
+
+    <input type="button" ng-click="subView='vbrmapadd.html'" value="Set New">
+
+    <div align="center">
+        <!--<ng-include src="subView"></ng-include>-->
+    </div><br><br>
+
+</div>

@@ -1,0 +1,13 @@
+<div>
+
+    <form>
+        <h3 class="title-style">Add a new Interface for {{vbrObject.vbr_name}}:</h3>
+        Interface Name: <input type="text" ng-model="ifc.ifName" required> 
+        Description: <input type="text" ng-model="ifc.ifDesc" required><br><br>
+        Administration Status: 
+        <input type="radio" ng-model="ifc.admStatus" value="enable">Enable
+        <input type="radio" ng-model="ifc.admStatus" value="disable">Disable<br><br>
+        <input type="button" ng-click="addvBrInt(option.vtn, option.vbr)" value="Submit">
+    </form>
+
+</div>

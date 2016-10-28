@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="vtnApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Static IP Routes</title>
+    <script src='/vtn/js/angular.min.js'></script>
+    <script src='/vtn/js/angular-resource.min.js'></script>
+    <script src='/vtn/js/angular-route.min.js'></script>
+    <script src='/vtn/js/angular-cookies.min.js'></script>
+    <script src='/vtn/js/angular-sanitize.min.js'></script>
+    <script src='/vtn/js/angular-touch.min.js'></script>
+    <script src='/vtn/js/angular-animate.min.js'></script>
+    <script src='/vtn/js/angular-aria.min.js'></script>
+    <script src='/vtn/js/angular-material.min.js'></script>
+    <script src='/vtn/bower_components/bootstrap/dist/js/ui-bootstrap-tpls-1.3.2.min.js'></script>
+    <script src='/vtn/controller.js'></script>
+    <script src='/vtn/vtnCtrl.js'></script>
+    <script src='/vtn/vrtCtrl.js'></script>
+    <script src='/vtn/factory.js'></script>
+    <script src='/vtn/service.js'></script>
+
+    <link type="text/css" rel="stylesheet" href="/vtn/css/angular-material.min.css"/>
+    <link type="text/css" rel="stylesheet" href='/vtn/css/vtn-style.css'/>
+
+</head>
+<body>
+<md-toolbar layout="row" >
+<h2>Static IP Routes</h2>
+</md-toolbar>
+<div ng-controller="vtnController">
+    <div ng-controller="vrtController">
+        <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+        <br>
+        <form>
+            Select a VTN:
+            <select ng-model="option.vtn" ng-click="getvRt(option.vtn)">
+                <option ng-repeat="tenant in tenants" value={{tenant}}>{{tenant.vtn_name}}</option>
+            </select><br><br>
+            Select a vRouter from the VTN:
+            <select ng-model="option.vrt">
+                <option ng-repeat="rtr in rtrs" value={{rtr}}>{{rtr.vrt_name}}</option>
+            </select><br><br>
+            <nav>
+                <a href="#!/vrtroutetable">
+                    <input type="button" ng-click="getStcRt(option.vtn, option.vrt)" value="Submit">
+                </a>
+            </nav>
+        </form><br>
+        </md-sidenav><br><br>
+        
+        <div ng-view>
+
+            <!-- IP Route Table Injection -->
+
+        </div>
+    </div>
+</div>
+
+<div align="center">
+    <a href="/vtn/index.html">
+        <input type="button" class="md-button" onclick value="Home">
+    </a>
+</div>
+
+</body>
+</html>

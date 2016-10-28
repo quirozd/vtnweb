@@ -1,0 +1,62 @@
+<div>
+    <table>
+        <thead>
+        <th colspan="7"> Physical Link {{plkObject.plk_summary}} </th>
+        </thead>
+        <thead>
+        <th colspan="4"> Statistics from port {{plkObject.port1_name}} </th>
+        <th colspan="2"> Link Information </th>
+        </thead>
+        <tbody>
+        <tr>
+            <td> Tx Packets </td>
+            <td> {{port1.statistics.tx_packets}} </td>
+            <td> Rx Packets </td>
+            <td> {{port1.statistics.rx_packets}} </td>
+            <td> {{plkObject.port1_name}} Logical Port </td>
+            <td> {{port1.logical_port_id}} </td>
+        </tr>
+        <tr>
+            <td> Tx Bytes </td>
+            <td> {{port1.statistics.tx_bytes}} </td>
+            <td> Rx Bytes </td>
+            <td> {{port1.statistics.rx_bytes}} </td>
+            <td> {{plkObject.port2_name}} Logical Port </td>
+            <td> {{port2.logical_port_id}} </td>
+        </tr>
+        <tr>
+            <td> Tx Dropped </td>
+            <td> {{port1.statistics.tx_dropped}} </td>
+            <td> Rx Dropped </td>
+            <td> {{port1.statistics.rx_dropped}} </td>
+            <td> Operational Status </td>
+            <td> {{plkObject.operstatus}} </td>
+        </tr>
+        <tr>
+            <td> Tx Errors </td>
+            <td> {{port1.statistics.tx_errors}} </td>
+            <td> Rx Errors </td>
+            <td> {{port1.statistics.rx_errors}} </td>
+            <td> Speed and Duplex </td>
+            <td> {{port1.speed}} {{port1.duplex}} </td>
+        </tr>
+        <tr>
+            <td> Rx Frame Error </td>
+            <td> {{port1.statistics.rx_frameerr}} </td>
+            <td> Rx CRC Error </td>
+            <td> {{port1.statistics.rx_crcerr}} </td>
+            <td> {{plkObject.port1_name}} Alarm Status </td>
+            <td> {{port1.alarmsstatus}} </td>
+        </tr>
+        <tr>
+            <td> Rx Overflow Error </td>
+            <td> {{port1.statistics.rx_overerr}} </td>
+            <td> Collisions </td>
+            <td> {{port1.statistics.collisions}} </td>
+            <td> {{plkObject.port2_name}} Alarm Status </td>
+            <td> {{port2.alarmsstatus}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

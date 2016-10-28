@@ -1,0 +1,22 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="4"> IP routes of {{vrtObject.vrt_name}} </th>
+        </thead>
+        <thead>
+        <th> Route ID </th>
+        <th> IP Address </th>
+        <th> Prefix </th>
+        <th> Next Hop </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="stcroute in stcroute">
+            <td> {{stcroute.static_iproute_id}} </td>
+            <td> {{stcroute.ipaddr}} </td>
+            <td> {{stcroute.prefix}} </td>
+            <td> {{stcroute.nexthopaddr}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new Controller:</h3>
+        Controller ID: <input type="text" ng-model="ctl.ctlId" required>
+        IP Address: <input type="text" ng-model="ctl.ctlIp" required><br><br>
+        Type: <input type="radio" ng-model="ctl.ctlType" value="bypass" required>Bypass
+        <input type="radio" ng-model="ctl.ctlType" value="odc" required>ODC
+        <input type="radio" ng-model="ctl.ctlType" value="pfc" required>PFC<br><br>
+        Controller Version: <input type="text" ng-model="ctl.ctlVer" required><br><br> 
+        Description: <input type="text" ng-model="ctl.ctlDesc" required> 
+        Audit Status: <input type="radio" ng-model="ctl.ctlAudStatus" value="enable" required>Enable
+        <input type="radio" ng-model="ctl.ctlAudStatus" value="disable" required>Disable<br><br>
+        <input type="button" ng-click="addCtrl()" value="Submit">
+    </form>
+
+</div>

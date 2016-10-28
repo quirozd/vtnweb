@@ -1,0 +1,24 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="5"> vRouters of {{vtnObject.vtn_name}} </th>
+        </thead>
+        <thead>
+        <th> Router Name </th>
+        <th> Controller ID </th>
+        <th> Domain ID </th>
+        <th> Description </th>
+        <th> Status </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="rtr in rtrs">
+            <td> {{rtr.vrt_name}} </td>
+            <td> {{rtr.controller_id}} </td>
+            <td> {{rtr.domain_id}} </td>
+            <td> {{rtr.description}} </td>
+            <td> {{rtr.status}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

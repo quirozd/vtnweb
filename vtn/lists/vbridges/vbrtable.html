@@ -1,0 +1,24 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="5"> vBridges of {{vtnObject.vtn_name}} </th>
+        </thead>
+        <thead>
+        <th> Bridge Name </th>
+        <th> Controller ID </th>
+        <th> Domain ID </th>
+        <th> Description </th>
+        <th> Status </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="brg in brgs">
+            <td> {{brg.vbr_name}} </td>
+            <td> {{brg.controller_id}} </td>
+            <td> {{brg.domain_id}} </td>
+            <td> {{brg.description}} </td>
+            <td> {{brg.status}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

@@ -1,0 +1,19 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new vRouter for {{vtnObject.vtn_name}}:</h3>
+        vRouter Name: <input type="text" ng-model="vrt.vrtName" required> 
+        Description: <input type="text" ng-model="vrt.vrtDesc" required><br><br>
+        <div ng-controller="ctlController">
+        Controller ID:
+        <select ng-init="getCtrl()" ng-model="vrt.ctlId" ng-click="getDom(vrt.ctlId)">
+            <option ng-repeat="ctl in ctls" value={{ctl.controller_id}}>{{ctl.controller_id}}</option>
+        </select> 
+        Domain ID:
+        <select ng-model="vrt.domId">
+            <option ng-repeat="dom in doms" value={{dom.domain_id}}>{{dom.domain_id}}</option>
+        </select>
+        </div><br><br>
+        <input type="button" ng-click="addvRt(option.vtn)" value="Submit"><br>
+    </form>
+
+</div>

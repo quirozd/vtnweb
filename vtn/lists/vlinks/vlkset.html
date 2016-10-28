@@ -1,0 +1,64 @@
+<div>
+    <script type="text/ng-template" id="vlkedit.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Edit {{vlkName}}</h3>
+        </div>
+        <div class="modal-body">
+            
+            <form>
+                Description: <input type="text" ng-model="vlk.vlkDesc" required><br><br>
+                Administration status: 
+                <input type="radio" ng-model="vlk.admStat" value="enable"> Enable
+                <input type="radio" ng-model="vlk.admStat" value="disable"> Disable
+                <br><br>
+                <h3>Boundary Map:</h3> 
+                <div ng-controller="vlkController">
+                    Boundary Id:
+                    <select ng-model="vlk.bdryId" ng-init="getBdry()">
+                        <option ng-repeat="bdr in bdrs" value={{bdr.boundary_id}}>{{bdr.boundary_id}}</option>
+                    </select><br><br>
+                    Using Vlans?:
+                    <input type="radio" ng-model="vlk.noVlan" value="true"> No
+                    <input type="radio" ng-model="vlk.noVlan" value="false"> Yes
+                    <br>
+                    Vlan Id (In case of using vlans):
+                    <input type="text" ng-model="vlk.vlanId" required>
+                </div><br>
+                <input type="button" ng-click="updLink()" value="Submit">
+            </form>
+            
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default btn-sm" ng-click="close()">Close</button>
+        </div>
+    </script>
+    <table>
+        <thead>
+        <th colspan="2"> Edit/Delete vLinks of {{vtnObject.vtn_name}} </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="link in links">
+            <td> {{link.vlk_name}} </td>
+            <td>
+                <!--button ng-click="updvLink(option.vtn, link)">Edit</button-->
+                <input type="button" ng-click="updLink(option.vtn, link)" value="Edit"> 
+                <input type="button" ng-click="delvLink(option.vtn, link)" value="Delete">
+            </td>
+        </tr>
+        </tbody>
+    </table><br>
+
+    <div align="center">
+    <input type="button" ng-click="subView='vlkadd.html'" value="Add New">
+    </div><br><br>
+    
+    <div align="center" ng-show="subView2">
+
+    </div><br><br>
+
+    <div align="center" ng-include="subView">
+        <!--<ng-include src="subView"></ng-include>-->
+    </div><br><br>
+
+</div>

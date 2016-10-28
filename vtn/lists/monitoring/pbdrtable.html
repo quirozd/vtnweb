@@ -1,0 +1,62 @@
+<div>
+    <table>
+        <thead>
+        <th colspan="7"> Boundary {{pbdrObject.boundary_id}} ({{bdrport1.port_name}} {{bdrport2.port_name}}) </th>
+        </thead>
+        <thead>
+        <th colspan="4"> Statistics from port {{bdrport1.port_name}} </th>
+        <th colspan="2"> Link Information </th>
+        </thead>
+        <tbody>
+        <tr>
+            <td> Tx Packets </td>
+            <td> {{bdrport1.statistics.tx_packets}} </td>
+            <td> Rx Packets </td>
+            <td> {{bdrport1.statistics.rx_packets}} </td>
+            <td> {{bdrport1.port_name}} Logical Port </td>
+            <td> {{bdrport1.logical_port_id}} </td>
+        </tr>
+        <tr>
+            <td> Tx Bytes </td>
+            <td> {{bdrport1.statistics.tx_bytes}} </td>
+            <td> Rx Bytes </td>
+            <td> {{bdrport1.statistics.rx_bytes}} </td>
+            <td> {{bdrport2.port_name}} Logical Port </td>
+            <td> {{bdrport2.logical_port_id}} </td>
+        </tr>
+        <tr>
+            <td> Tx Dropped </td>
+            <td> {{bdrport1.statistics.tx_dropped}} </td>
+            <td> Rx Dropped </td>
+            <td> {{bdrport1.statistics.rx_dropped}} </td>
+            <td> Operational Status </td>
+            <td> {{pbdrObject.operstatus}} </td>
+        </tr>
+        <tr>
+            <td> Tx Errors </td>
+            <td> {{bdrport1.statistics.tx_errors}} </td>
+            <td> Rx Errors </td>
+            <td> {{bdrport1.statistics.rx_errors}} </td>
+            <td> Speed and Duplex </td>
+            <td> {{bdrport1.speed}} {{bdrport1.duplex}} </td>
+        </tr>
+        <tr>
+            <td> Rx Frame Error </td>
+            <td> {{bdrport1.statistics.rx_frameerr}} </td>
+            <td> Rx CRC Error </td>
+            <td> {{bdrport1.statistics.rx_crcerr}} </td>
+            <td> {{bdrport1.port_name}} Alarm Status </td>
+            <td> {{bdrport1.alarmsstatus}} </td>
+        </tr>
+        <tr>
+            <td> Rx Overflow Error </td>
+            <td> {{bdrport1.statistics.rx_overerr}} </td>
+            <td> Collisions </td>
+            <td> {{bdrport1.statistics.collisions}} </td>
+            <td> {{bdrport2.port_name}} Alarm Status </td>
+            <td> {{bdrport2.alarmsstatus}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

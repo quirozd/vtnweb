@@ -1,0 +1,22 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="5"> Domains of {{option.ctrl}} controller </th>
+        </thead>
+        <thead>
+        <th> Domain ID </th>
+        <th> Type </th>
+        <th> Description </th>
+        <th> Status </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="dom in doms">
+            <td> {{dom.domain_id}} </td>
+            <td> {{dom.type}} </td>
+            <td> {{dom.description}} </td>
+            <td> {{dom.operstatus}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

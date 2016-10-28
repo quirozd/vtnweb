@@ -1,0 +1,53 @@
+<div ng-controller="vbrController">
+    <div ng-controller="vlkController">
+        <h2 class="title-style"> VTN Summary </h2>
+        <div ng-repeat="tnet in tnets">
+            <br><br>
+            <table ng-init="getvBr(tnet); getvLinks(tnet)">
+                <thead>
+                    <th colspan="10"> VTN: {{tnet.vtn_name}} </th>
+                </thead>
+                <thead>
+                    <th colspan="5"> vBridges </th>
+                    <th colspan="5"> vLinks </th>
+                </thead>
+                <thead>
+                    <th> vBridge Name </th>
+                    <th colspan="2"> Port Mappings </th>
+                    <th colspan="2"> Vlan Mappings </th>
+                    <th> vLink Name </th>
+                    <th colspan="2"> vNode1 </th>
+                    <th colspan="2"> vNode2 </th>
+                </thead>
+                <thead>
+                    <th>  </th>
+                    <th> Interface </th>
+                    <th> Logical Port </th>
+                    <th> Vlan Id </th>
+                    <th> Logical Port </th>
+                    <th>  </th>
+                    <th> Name </th>
+                    <th> Interface </th>
+                    <th> Name </th>
+                    <th> Interface </th>
+                </thead>
+                <tbody ng-repeat="brg in brgs">
+                    <tr ng-repeat="link in links">
+                        <td> {{brg.vbr_name}} </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> {{link.vlk_name}} </td>
+                        <td> {{link.vnode1_name}} </td>
+                        <td> {{link.if1_name}} </td>
+                        <td> {{link.vnode2_name}} </td>
+                        <td> {{link.if2_name}} </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        
+    </div>
+</div>

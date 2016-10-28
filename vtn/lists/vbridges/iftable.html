@@ -1,0 +1,22 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="4"> Interfaces of {{vbrObject.vbr_name}} </th>
+        </thead>
+        <thead>
+        <th> Interface Name </th>
+        <th> Description </th>
+        <th> Administration Status </th>
+        <th> Operational Status </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="intf in intfs">
+            <td> {{intf.if_name}} </td>
+            <td> {{intf.description}} </td>
+            <td> {{intf.adminstatus}} </td>
+            <td> {{intf.operstatus}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+
+</div>

@@ -1,0 +1,29 @@
+<div>
+    <table align="center">
+        <thead>
+        <th colspan="1"> VTN Mappings of {{option.vtn}} </th>
+        </thead>
+        <thead>
+        <th></th>
+        <th colspan="5"> Description </th>
+        </thead>
+        <thead>
+        <th> Map ID </th>
+        <th> Controller ID </th>
+        <th> Switch ID </th>
+        <th> Logical Port </th>
+        <th> Map Type </th>
+        <th> vBridge </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="tmap in tmaps">
+            <td> {{tmap.mapping_id}} </td>
+            <td> {{tmap.controller_id}} </td>
+            <td> {{tmap.mappinginfos.switch_id}} </td>
+            <td> {{tmap.mappinginfos.logical_port_id}} </td>
+            <td> {{tmap.mappinginfos.maptype}} </td>
+            <td> {{tmap.mappinginfos.vbr_name}} </td>
+        </tr>
+        </tbody>
+    </table><br><br>
+</div>

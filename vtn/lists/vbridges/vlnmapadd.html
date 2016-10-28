@@ -1,0 +1,11 @@
+<div>
+    <form>
+        <h3 class="title-style">Add a new VLAN Mapping</h3><br>
+        VLAN ID: <input type="text" ng-model="vlan.vlnId"><br><br>
+        <h3>Logical Port ID:</h3>
+        <select ng-init="getLogPts(option.vbr)" ng-model="vlan.logPtId">
+            <option ng-repeat="logpt in logpts" value={{logpt.logical_port_id}}>{{logpt.logical_port_id}}</option>
+        </select><br><br>
+        <input type="button" ng-click="addVlnMap(option.vtn, option.vbr)" value="Submit">
+    </form>
+</div>
